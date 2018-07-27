@@ -4,8 +4,8 @@ Basic algorithms implemented by ruby
 
 ## Content
 
-* [Search](# search)
-
+* [Search](#Search)
+* [Sorting](#Sorting)
 
 ### Search
 
@@ -13,3 +13,6 @@ Basic algorithms implemented by ruby
 * Iteration
 * Recursion
 
+### Sorting
+
+#### 1. BubbleSort

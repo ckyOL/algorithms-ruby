@@ -1,7 +1,7 @@
 require './search/binary_search'
 require 'minitest/autorun'
 
-class TestBinarySearch < Minitest::Test
+class BinarySearchTest < Minitest::Test
 
   def setup
     @array = [1, 3, 5, 7, 9]
