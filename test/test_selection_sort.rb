@@ -11,7 +11,7 @@ class SelectionSortTest < Minitest::Test
     @array_sorted = [1, 2, 3, 4, 5, 7]
   end
 
-  def test_bubble
+  def test_selection
     assert_equal @array_sorted, @sort.selection(@array)
     assert_equal @array_empty, @sort.selection(@array_empty)
     assert_equal @array_one, @sort.selection(@array_one)

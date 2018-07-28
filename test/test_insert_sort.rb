@@ -11,7 +11,7 @@ class InsertSortTest < Minitest::Test
     @array_sorted = [1, 2, 3, 4, 5, 7]
   end
 
-  def test_bubble
+  def test_insert
     assert_equal @array_sorted, @sort.insert(@array)
     assert_equal @array_empty, @sort.insert(@array_empty)
     assert_equal @array_one, @sort.insert(@array_one)

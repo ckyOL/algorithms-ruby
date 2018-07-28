@@ -28,7 +28,7 @@ class BinarySearch
   # @param [Array last index] last
   # @param [Search number] num
   # @return [Array index]
-  def binary_search_recursion(array, first, last, num)
+  def binary_search_recursive(array, first, last, num)
     return -1 if array.empty?
 
     mid = (first + last) / 2
@@ -36,9 +36,9 @@ class BinarySearch
     return -1 if first > last
 
     if array[mid] > num
-      binary_search_recursion(array, first, mid - 1, num)
+      binary_search_recursive(array, first, mid - 1, num)
     elsif array[mid] < num
-      binary_search_recursion(array, mid + 1, last, num)
+      binary_search_recursive(array, mid + 1, last, num)
     else
       return mid
     end
