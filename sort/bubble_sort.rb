@@ -3,6 +3,8 @@ class BubbleSort
   # @return [Array]
   def bubble(array)
     n = array.length
+    return array if n == 1 || n == 0
+
     (0...n - 1).each do |i|
       (0...n - 1 - i).each do |j|
         if array[j] > array[j + 1]
