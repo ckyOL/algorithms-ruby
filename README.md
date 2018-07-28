@@ -16,3 +16,7 @@ Basic algorithms implemented by ruby
 ### Sorting
 
 #### 1. BubbleSort
+
+#### 2. InsertSort
+
+#### 3. SelectSort
