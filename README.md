@@ -10,8 +10,8 @@ Basic algorithms implemented by ruby
 ### Search
 
 #### 1. BinarySearch
-* Iteration
-* Recursion
+* Iterative
+* Recursive
 
 ### Sorting
 
@@ -20,3 +20,10 @@ Basic algorithms implemented by ruby
 #### 2. InsertSort
 
 #### 3. SelectSort
+
+#### 4. MergeSort
+* Recursive
+
+#### 5. QuickSort
+* Recursive with additional space
+* Recursive

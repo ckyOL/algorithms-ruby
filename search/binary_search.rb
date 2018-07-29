@@ -4,7 +4,7 @@ class BinarySearch
   # @param [Input data] array
   # @param [Search number] num
   # @return [Array index]
-  def binary_search_iteration(array, num)
+  def binary_search_iterative(array, num)
     return -1 if array.empty?
 
     first = 0
