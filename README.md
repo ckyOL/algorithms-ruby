@@ -34,7 +34,6 @@ Basic algorithms implemented by ruby
 #### 1. Traversal
 print `node.val`
 
-#### 2. Output
-` Array << node.val`
+#### 2. Reverse
 
 #### 3. Merge two list

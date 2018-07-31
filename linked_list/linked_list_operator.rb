@@ -21,6 +21,25 @@ class LinkedListOperator
     out
   end
 
+  # @param [LinkedList :head] head
+  # @return [ListNode] reverse_head
+  def reverse_list(head)
+    reverse_head = nil
+    node = head
+    node_prev = nil
+
+    until node.nil?
+      node_next = node.next
+
+      reverse_head = node if node_next.nil?
+
+      node.next = node_prev
+      node_prev = node
+      node = node_next
+    end
+    reverse_head
+  end
+
   # @param [ListNode] l1 LinkedList.head
   # @param [ListNode] l2 LinkedList.head
   # @return [ListNode] node
