@@ -6,10 +6,10 @@ class ListNode
   end
 end
 
-class LinkList
+class LinkedList
   attr_reader :head
-  def initialize
-    @head = ListNode.new(nil)
+  def initialize(val = nil)
+    @head = ListNode.new(val)
     @last = @head
   end
 

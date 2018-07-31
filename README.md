@@ -4,8 +4,9 @@ Basic algorithms implemented by ruby
 
 ## Content
 
-* [Search](#Search)
-* [Sorting](#Sorting)
+* [Search](#search)
+* [Sorting](#sorting)
+* [Linked List](#linkedlist)
 
 ### Search
 
@@ -27,3 +28,13 @@ Basic algorithms implemented by ruby
 #### 5. QuickSort
 * Recursive with additional space
 * Recursive
+
+### Linked List
+
+#### 1. Traversal
+print `node.val`
+
+#### 2. Output
+` Array << node.val`
+
+#### 3. Merge two list
