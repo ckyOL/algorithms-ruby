@@ -6,7 +6,8 @@ Basic algorithms implemented by ruby
 
 * [Search](#search)
 * [Sorting](#sorting)
-* [Linked List](#linkedlist)
+* [Linked List](#linked-list)
+* [Binary Tree](#binary-tree)
 
 ### Search
 
@@ -37,3 +38,11 @@ print `node.val`
 #### 2. Reverse
 
 #### 3. Merge two list
+
+### Binary Tree
+
+#### 1. Traversal
+* preorder
+* inorder
+* postorder
+

@@ -26,23 +26,39 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_traversal
-    assert_equal @array1, @operator.output(@list1.head)
-    assert_equal @array2, @operator.output(@list2.head)
-    assert_equal @array_merged, @operator.output(@list_merged.head)
+    array = []
+    @list1.head.traversal { |x| array << x.val }
+    assert_equal @array1, array
   end
 
-  def test_reverse_list
+  def test_reverse_traversal
+    array = []
+    @list_merged.head.reverse_traversal { |x| array << x.val }
+    assert_equal @array_reverse, array
+  end
+
+  def test_traversal_with_operator
+    assert_equal @array1, @operator.traversal(@list1.head, "order")
+    assert_equal @array2, @operator.traversal(@list2.head, "order")
+    assert_equal @array_merged, @operator.traversal(@list_merged.head, "order")
+  end
+
+  def test_reverse_traversal_with_operator
+    assert_equal @array_reverse, @operator.traversal(@list_merged.head, "reverse")
+  end
+
+  def test_reverse_list_with_operator
     @node = @operator.reverse_list(@list_merged.head)
-    assert_equal @array_reverse, @operator.output(@node)
+    assert_equal @array_reverse, @operator.traversal(@node, "order")
   end
 
   def test_merge_two_list
     @node = @operator.merge_two_lists(@list1.head, @list2.head)
-    assert_equal @array_merged, @operator.output(@node)
+    assert_equal @array_merged, @operator.traversal(@node, "order")
   end
 
   def test_merge_with_empty
     @node = @operator.merge_two_lists(@list1.head, @empty_list)
-    assert_equal @array1, @operator.output(@node)
+    assert_equal @array1, @operator.traversal(@node, "order")
   end
 end

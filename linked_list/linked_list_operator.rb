@@ -1,24 +1,34 @@
 class LinkedListOperator
-  # @param [LinkedList :head] head
-  def traversal(head)
-    node = head
-    until node.nil?
-      print "#{node.val} " unless node.val.nil?
-      node = node.next
-    end
-    puts
-  end
 
   # @param [LinkedList :head] head
-  # @return [Array] out
-  def output(head)
-    node = head
-    out = []
-    until node.nil?
-      out << node.val unless node.val.nil?
-      node = node.next
+  # @param [String] order
+  # @return [Array] res
+  def traversal(head, order)
+    res = []
+    send("#{order}_traversal", res, head)
+  end
+
+  # @param [Array] res
+  # @param [LinkedList :head] head
+  # @return [Array] res
+  def order_traversal(res, head)
+    until head.nil?
+      res << head.val unless head.val.nil?
+      head = head.next_node
     end
-    out
+    res
+  end
+
+  # @param [Array] res
+  # @param [LinkedList :head] head
+  # @return [Array] res
+  def reverse_traversal(res, head)
+    return res if head.nil?
+
+    if head
+      reverse_traversal(res, head.next_node)
+      res << head.val
+    end
   end
 
   # @param [LinkedList :head] head
@@ -29,11 +39,11 @@ class LinkedListOperator
     node_prev = nil
 
     until node.nil?
-      node_next = node.next
+      node_next = node.next_node
 
       reverse_head = node if node_next.nil?
 
-      node.next = node_prev
+      node.next_node = node_prev
       node_prev = node
       node = node_next
     end
@@ -54,10 +64,10 @@ class LinkedListOperator
 
     if l1.val < l2.val
       node = l1
-      node.next = merge_two_lists(l1.next, l2)
+      node.next_node = merge_two_lists(l1.next_node, l2)
     else
       node = l2
-      node.next = merge_two_lists(l1, l2.next)
+      node.next_node = merge_two_lists(l1, l2.next_node)
     end
     node
   end
