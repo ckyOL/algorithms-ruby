@@ -34,4 +34,20 @@ class BinaryTreeTest < Minitest::Test
     assert_equal @array_in, @operator.traversal(@root, "inorder")
     assert_equal @array_post, @operator.traversal(@root, "postorder")
   end
+
+  def test_tree_build
+    array_pre = [1, 2, 4, 7, 3, 5, 6, 8]
+    array_in = [4, 7, 2, 1, 5, 3, 8, 6]
+    array = []
+    array2 = []
+
+    tree = BinaryTree.new
+    root = tree.create(array_pre, array_in)
+
+    root.preorder { |x| array << x.val }
+    root.postorder { |x| array2 << x.val}
+
+    p array2
+    assert_equal array_pre, array
+  end
 end
