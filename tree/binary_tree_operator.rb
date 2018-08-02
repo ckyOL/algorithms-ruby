@@ -14,10 +14,9 @@ class BinaryTreeOperator
 
     unless root.nil?
       res << root.val
-      res = preorder_turn(res, root.left)
-      res = preorder_turn(res, root.right)
+      preorder_turn(res, root.left)
+      preorder_turn(res, root.right)
     end
-    res
   end
 
   # @param [Array] res
@@ -26,11 +25,10 @@ class BinaryTreeOperator
     return res if root.nil?
 
     unless root.nil?
-      res = inorder_turn(res, root.left)
+      inorder_turn(res, root.left)
       res << root.val
-      res = inorder_turn(res, root.right)
+      inorder_turn(res, root.right)
     end
-    res
   end
 
   # @param [Array] res
@@ -39,10 +37,27 @@ class BinaryTreeOperator
     return res if root.nil?
 
     unless root.nil?
-      res = postorder_turn(res, root.left)
-      res = postorder_turn(res, root.right)
+      postorder_turn(res, root.left)
+      postorder_turn(res, root.right)
       res << root.val
     end
-    res
+  end
+
+  # @param [Array] res
+  # @param [TreeNode] root
+  # @return [Array] res
+  def layer_traversal(res, root)
+    return res if root.nil?
+
+    quote = []
+    quote << root
+
+    until quote.empty?
+      node = quote.shift
+      res << node.val
+
+      quote << node.left if node.left
+      quote << node.right if node.right
+    end
   end
 end

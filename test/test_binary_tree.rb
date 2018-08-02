@@ -4,15 +4,29 @@ require 'minitest/autorun'
 
 class BinaryTreeTest < Minitest::Test
   def setup
-    @array_pre = [3, 2, 1]
-    @array_in = [2, 3, 1]
-    @array_post = [2, 1, 3]
+    @array_pre = [1, 2, 4, 7, 3, 5, 6, 8]
+    @array_in = [4, 7, 2, 1, 5, 3, 8, 6]
+    @array_post = [7, 4, 2, 5, 8, 6, 3, 1]
+    @array_layer = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    @root = TreeNode.new(3)
-    @root.left = TreeNode.new(2)
-    @root.right = TreeNode.new(1)
+    tree = BinaryTree.new
+    @root = tree.create(@array_pre, @array_in)
 
     @operator = BinaryTreeOperator.new
+  end
+
+  def test_tree_build
+    array_pre = [1, 2, 3]
+    array_in = [2, 1, 3]
+    array_post = [2, 3, 1]
+    array = []
+
+    tree = BinaryTree.new
+    root = tree.create(array_pre, array_in)
+
+    root.postorder { |x| array << x.val }
+
+    assert_equal array_post, array
   end
 
   def test_traversal
@@ -35,19 +49,9 @@ class BinaryTreeTest < Minitest::Test
     assert_equal @array_post, @operator.traversal(@root, "postorder")
   end
 
-  def test_tree_build
-    array_pre = [1, 2, 4, 7, 3, 5, 6, 8]
-    array_in = [4, 7, 2, 1, 5, 3, 8, 6]
-    array = []
-    array2 = []
-
-    tree = BinaryTree.new
-    root = tree.create(array_pre, array_in)
-
-    root.preorder { |x| array << x.val }
-    root.postorder { |x| array2 << x.val}
-
-    p array2
-    assert_equal array_pre, array
+  def test_layer_traversal
+    res = []
+    @operator.layer_traversal(res, @root)
+    assert_equal @array_layer, res
   end
 end
