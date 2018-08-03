@@ -33,7 +33,8 @@ Basic algorithms implemented by ruby
 ### Linked List
 
 #### 1. Traversal
-print `node.val`
+* order
+* reverse
 
 #### 2. Reverse
 
@@ -45,4 +46,4 @@ print `node.val`
 * preorder
 * inorder
 * postorder
-
+* layer

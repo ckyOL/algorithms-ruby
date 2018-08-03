@@ -17,16 +17,14 @@ class ListNode
 end
 
 class LinkedList
-  attr_reader :head
-  def initialize(val = nil)
-    @head = ListNode.new(val)
-    @last = @head
-  end
-
-  def add(val)
-    @new_node = ListNode.new(val)
-    @last.next_node = @new_node
-    @last = @new_node
+  def create(array)
+    head = ListNode.new(array[0])
+    last = head
+    array[1..-1].each do |i|
+      last.next_node = ListNode.new(i)
+      last = last.next_node
+    end
+    head
   end
 end
 
