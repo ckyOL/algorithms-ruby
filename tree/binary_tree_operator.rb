@@ -60,4 +60,34 @@ class BinaryTreeOperator
       quote << node.right if node.right
     end
   end
+
+  # @param [TreeNode] root
+  # @param [Int] num
+  def find_path(root, num)
+    return nil if root.nil?
+    path = []
+    sum = 0
+    path_operator(root, num, path, sum)
+  end
+
+  # @param [TreeNode] root
+  # @param [Int] num
+  # @param [Array] path
+  # @param [Int] sum
+  def path_operator(root, num, path, sum)
+    sum += root.val
+    path << root.val
+
+    is_leaf = root.left.nil? && root.right.nil?
+    if sum == num && is_leaf
+      puts 'path: '
+      path.each { |x| print "#{x} " }
+      puts
+    end
+    
+    path_operator(root.left, num, path, sum) unless root.left.nil?
+    path_operator(root.right, num, path, sum) unless root.right.nil?
+
+    path.pop
+  end
 end

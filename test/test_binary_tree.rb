@@ -54,4 +54,8 @@ class BinaryTreeTest < Minitest::Test
     @operator.layer_traversal(res, @root)
     assert_equal @array_layer, res
   end
+
+  def test_find_path
+    @operator.find_path(@root, 3)
+  end
 end

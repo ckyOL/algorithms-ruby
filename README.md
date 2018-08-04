@@ -47,3 +47,5 @@ Basic algorithms implemented by ruby
 * inorder
 * postorder
 * layer
+
+#### 2. Find path
