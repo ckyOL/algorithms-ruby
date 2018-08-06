@@ -8,6 +8,7 @@ Basic algorithms implemented by ruby
 * [Sorting](#sorting)
 * [Linked List](#linked-list)
 * [Binary Tree](#binary-tree)
+* [String](#string)
 
 ### Search
 
@@ -49,3 +50,7 @@ Basic algorithms implemented by ruby
 * layer
 
 #### 2. Find path
+
+### String
+
+#### 1. Permutation
