@@ -1,6 +1,6 @@
 class LinkedListOperator
 
-  # @param [LinkedList :head] head
+  # @param [ListNode] head LinkedList.head
   # @param [String] order
   # @return [Array] res
   def traversal(head, order)
@@ -9,7 +9,7 @@ class LinkedListOperator
   end
 
   # @param [Array] res
-  # @param [LinkedList :head] head
+  # @param [ListNode] head LinkedList.head
   # @return [Array] res
   def order_traversal(res, head)
     until head.nil?
@@ -20,7 +20,7 @@ class LinkedListOperator
   end
 
   # @param [Array] res
-  # @param [LinkedList :head] head
+  # @param [ListNode] head LinkedList.head
   # @return [Array] res
   def reverse_traversal(res, head)
     return res if head.nil?
@@ -31,7 +31,7 @@ class LinkedListOperator
     end
   end
 
-  # @param [LinkedList :head] head
+  # @param [ListNode] head LinkedList.head
   # @return [ListNode] reverse_head
   def reverse_list(head)
     reverse_head = nil
@@ -72,4 +72,36 @@ class LinkedListOperator
     node
   end
 
+  # @param [ListNode] list1
+  # @param [ListNode] list2
+  # @return [ListNode] common_node
+  def common_node(list1, list2)
+    return nil if list1.nil? || list2.nil?
+
+    list1_length = 0
+    list2_length = 0
+    list1.traversal { |x| list1_length += 1 unless x.nil? }
+    list2.traversal { |x| list2_length += 1 unless x.nil? }
+
+    length_diff = (list1_length - list2_length).abs
+
+    if list1_length >= list2_length
+      long_list_head = list1
+      short_list_head = list2
+    else
+      long_list_head = list2
+      short_list_head = list1
+    end
+
+    (0...length_diff).each do
+      long_list_head = long_list_head.next_node
+    end
+
+    while !long_list_head.nil? && !short_list_head.nil? && long_list_head != short_list_head
+      long_list_head = long_list_head.next_node
+      short_list_head = short_list_head.next_node
+    end
+
+    long_list_head
+  end
 end
