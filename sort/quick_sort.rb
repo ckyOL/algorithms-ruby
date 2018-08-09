@@ -25,18 +25,18 @@ class QuickSort
   # @param [Right index] right
   # @return [Pivot index]
   def sort_partition(array, left, right)
-    pivot = array[right - 1]
-    i = left - 1
+    pivot = right - 1
+    small = left - 1
 
     (left...right).each do |j|
-      if array[j] < pivot
-        i += 1
-        array[i], array[j] = array[j], array[i]
+      if array[j] < array[pivot]
+        small += 1
+        array[small], array[j] = array[j], array[small]
       end
     end
-    if array[right - 1] < array[i + 1]
-      array[i + 1], array[right - 1] = array[right - 1], array[i + 1]
-    end
-    i + 1
+    small += 1
+    array[small], array[pivot] = array[pivot], array[small]
+
+    small
   end
 end

@@ -6,9 +6,11 @@ class QuickSortTest < Minitest::Test
   def setup
     @sort = QuickSort.new
     @array_odd = [2, 7, 3, 4, 1]
+    @array_even = [59, 40, 55, 92, 73, 69, 27, 79, 3, 30]
+
     @array_odd_sorted = [1, 2, 3, 4, 7]
-    @array_even = [1, 7, 4, 5, 3, 2]
-    @array_even_sorted = [1, 2, 3, 4, 5, 7]
+    @array_even_sorted = [3, 27, 30, 40, 55, 59, 69, 73, 79, 92]
+
     @array_empty = []
     @array_one = [1]
     @array_two = [5, 1]
