@@ -29,7 +29,7 @@ class BinarySearch
   # @param [Search number] num
   # @return [Array index]
   def binary_search_recursive(array, first, last, num)
-    return -1 if array.empty?
+    return -1 if array.empty? || first < 0 || last > array.length - 1
 
     mid = (first + last) / 2
 
