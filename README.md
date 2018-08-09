@@ -9,6 +9,8 @@ Basic algorithms implemented by ruby
 * [Linked List](#linked-list)
 * [Binary Tree](#binary-tree)
 * [String](#string)
+* [Array](#array)
+* [Divide and conquer](#divide-and-conquer)
 
 ### Search
 
@@ -41,6 +43,8 @@ Basic algorithms implemented by ruby
 
 #### 3. Merge two list
 
+#### 4. Common Node in two list 
+
 ### Binary Tree
 
 #### 1. Traversal
@@ -54,3 +58,11 @@ Basic algorithms implemented by ruby
 ### String
 
 #### 1. Permutation
+
+### Array
+
+#### 1. More than half number
+
+### Divide and conquer
+
+#### 1. Eight queen
