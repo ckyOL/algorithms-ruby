@@ -2,7 +2,7 @@ require './tree/binary_tree'
 require './tree/binary_tree_operator'
 require 'minitest/autorun'
 
-class BinaryTreeTest < Minitest::Test
+class BinaryTreeDepthTest < Minitest::Test
   def setup
     @array_pre = [1, 2, 4, 7, 3, 5, 6, 8]
     @array_in = [4, 7, 2, 1, 5, 3, 8, 6]
