@@ -90,4 +90,13 @@ class BinaryTreeOperator
 
     path.pop
   end
+
+  def depth(root)
+    return 0 if root.nil?
+
+    left = depth(root.left)
+    right = depth(root.right)
+
+    left > right ? left + 1 : right + 1
+  end
 end

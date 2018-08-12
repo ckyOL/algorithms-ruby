@@ -5,13 +5,13 @@ class LinkedListOperator
   # @return [Array] res
   def traversal(head, order)
     res = []
-    send("#{order}_traversal", res, head)
+    send("#{order}_traversal", head, res)
   end
 
   # @param [Array] res
   # @param [ListNode] head LinkedList.head
   # @return [Array] res
-  def order_traversal(res, head)
+  def order_traversal(head, res)
     until head.nil?
       res << head.val unless head.val.nil?
       head = head.next_node
@@ -22,11 +22,11 @@ class LinkedListOperator
   # @param [Array] res
   # @param [ListNode] head LinkedList.head
   # @return [Array] res
-  def reverse_traversal(res, head)
+  def reverse_traversal(head, res)
     return res if head.nil?
 
     if head
-      reverse_traversal(res, head.next_node)
+      reverse_traversal(head.next_node, res)
       res << head.val
     end
   end
