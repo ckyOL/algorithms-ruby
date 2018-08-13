@@ -91,6 +91,8 @@ class BinaryTreeOperator
     path.pop
   end
 
+  # @param [TreeNode] root
+  # @return [Int]
   def depth(root)
     return 0 if root.nil?
 

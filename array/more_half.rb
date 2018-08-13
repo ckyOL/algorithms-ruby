@@ -1,12 +1,6 @@
 class MoreHalf
-  def more_than_half?(array, result)
-    count = 0
-    (0...array.length).each do |i|
-      count += 1 if array[i] == result
-    end
-    count * 2 > array.length
-  end
-
+  # @param [Int array] array
+  # @return [Int]
   def more_than_half_num(array)
     return nil if array.nil?
 
@@ -25,5 +19,16 @@ class MoreHalf
     end
     return 0 unless more_than_half?(array, result)
     result
+  end
+
+  # @param [Int array] array
+  # @param [Int] result
+  # @return [Bool]
+  def more_than_half?(array, result)
+    count = 0
+    (0...array.length).each do |i|
+      count += 1 if array[i] == result
+    end
+    count * 2 > array.length
   end
 end

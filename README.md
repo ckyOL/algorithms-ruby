@@ -55,6 +55,8 @@ Basic algorithms implemented by ruby
 
 #### 2. Find path
 
+#### 3. Depth
+
 ### String
 
 #### 1. Permutation
@@ -62,6 +64,8 @@ Basic algorithms implemented by ruby
 ### Array
 
 #### 1. More than half number
+
+#### 2. Two number with sum 
 
 ### Divide and conquer
 
