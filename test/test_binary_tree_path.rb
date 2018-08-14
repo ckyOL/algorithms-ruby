@@ -1,8 +1,10 @@
 require './tree/binary_tree'
 require './tree/binary_tree_operator'
+require './test/test_helper'
 require 'minitest/autorun'
 
 class BinaryTreePathTest < Minitest::Test
+  include TestHelper
   def setup
     @array_pre = [1, 2, 4, 7, 3, 5, 6, 8]
     @array_in = [4, 7, 2, 1, 5, 3, 8, 6]
@@ -21,12 +23,6 @@ class BinaryTreePathTest < Minitest::Test
     @root_single = TreeNode.new(1)
 
     @operator = BinaryTreeOperator.new
-  end
-
-  def puts_segmentation
-    puts "======================="
-    yield
-    puts "======================="
   end
 
   def test_find_path
