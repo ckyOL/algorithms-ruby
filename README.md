@@ -67,6 +67,10 @@ Basic algorithms implemented by ruby
 
 #### 2. Two number with sum 
 
+#### 3. Continuous array witch sum
+
+#### 4. Find number in matrix
+
 ### Divide and conquer
 
 #### 1. Eight queen
